@@ -16,16 +16,13 @@ using System.Windows.Shapes;
 namespace InventoryMS.View
 {
     /// <summary>
-    /// Interaction logic for DashboardUserControl.xaml
+    /// Interaction logic for SupplierUserControl.xaml
     /// </summary>
-    public partial class DashboardUserControl : UserControl
+    public partial class SupplierUserControl : UserControl
     {
-        public DashboardUserControl()
+        public SupplierUserControl()
         {
             InitializeComponent();
         }
-
-        
-
     }
 }

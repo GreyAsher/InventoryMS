@@ -13,6 +13,10 @@ namespace InventoryMS
         public MainWindow()
         {
             InitializeComponent();
+
+            // Load Dashboard automatically when app starts
+            MainContent.Content = new DashboardUserControl();
+
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -60,6 +64,16 @@ namespace InventoryMS
         private void OpenProductPage(object sender, RoutedEventArgs e)
         {
             MainContent.Content = new ProductUserControl();
+        }
+        
+        private void SupplierButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new SupplierUserControl();
+        }
+        
+        private void SalesButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new SalesUserControl();
         }
 
     }

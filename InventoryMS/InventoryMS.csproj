@@ -74,6 +74,12 @@
     <Compile Include="View\ProductUserControl.xaml.cs">
       <DependentUpon>ProductUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SalesUserControl.xaml.cs">
+      <DependentUpon>SalesUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SupplierUserControl.xaml.cs">
+      <DependentUpon>SupplierUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\UserManageUserControl.xaml.cs">
       <DependentUpon>UserManageUserControl.xaml</DependentUpon>
     </Compile>
@@ -94,6 +100,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ProductUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SalesUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SupplierUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
