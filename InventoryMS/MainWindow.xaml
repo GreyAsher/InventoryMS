@@ -30,17 +30,17 @@
 
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto" MinHeight="720"/>
+                <RowDefinition Height="0*"/>
             </Grid.RowDefinitions>
 
-            <Button Margin="20,28,0,160" Style="{StaticResource topButton}">
+            <Button Margin="20,279,0,411" Style="{StaticResource topButton}" Width="30">
                 <Icon:PackIconMaterial Kind="Menu" Width="30" Height="25"/>
 
             </Button>
 
 
-            <Border Background="Gray" CornerRadius="0 50 0 20" Margin="0,113,0,0" Grid.RowSpan="2">
+            <Border Background="Gray" CornerRadius="0 50 0 20" Margin="0,113,0,0">
                 <DockPanel>
 
                     <Border Width="80" Height="80" Padding="3" Background="White" CornerRadius="100"
@@ -62,26 +62,26 @@
 
                     <!--Menu BUtton-->
                     <StackPanel DockPanel.Dock="Top">
-                        <Button Style="{StaticResource menuButton}">
+                        <Button Style="{StaticResource menuButton}" Click="DashboardButton_Click">
                             <StackPanel Orientation="Horizontal">
                                 <Icon:PackIconMaterial Kind="MonitorDashboard" Style="{StaticResource menuBUttonIcon}"/>
                                 <TextBlock Text="Dashboard"/>
                             </StackPanel>
                         </Button>
 
-                        <Button Style="{StaticResource menuButton}">
+                        <Button Style="{StaticResource menuButton}" Click="OpenUserManagement">
                             <StackPanel Orientation="Horizontal">
                                 <Icon:PackIconMaterial Kind="Account"  Style="{StaticResource menuBUttonIcon}"/>
                                 <TextBlock Text="User Management"/>
                             </StackPanel>
                         </Button>
 
-                        <Button Style="{StaticResource menuButton}">
+                        <!--<Button Style="{StaticResource menuButton}">
                             <StackPanel Orientation="Horizontal">
                                 <Icon:PackIconMaterial Kind="FileTree" Style="{StaticResource menuBUttonIcon}"/>
                                 <TextBlock Text="Category"/>
                             </StackPanel>
-                        </Button>
+                        </Button>-->
 
                         <Button Style="{StaticResource menuButton}">
                             <StackPanel Orientation="Horizontal">
@@ -125,7 +125,7 @@
             </Border>
 
             <!--Main Selection-->
-            <Grid Grid.Column="1" Margin="30 20 20 20">
+            <Grid Grid.Column="1" Margin="30,20,20,20">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -158,14 +158,14 @@
                 </Button>
 
                 <!--Page Title-->
-                <TextBlock Text="Members" Grid.Row="1" FontSize="32" FontWeight="SemiBold" Margin="0 20 0 0"
+                <TextBlock Text="Product" Grid.Row="1" FontSize="32" FontWeight="SemiBold" Margin="0 20 0 0"
                            HorizontalAlignment="Left" Foreground="Black"/>
 
                 <!--Add Button-->
                 <Button Style="{StaticResource addButton}">
                     <StackPanel Orientation="Horizontal">
                         <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
-                        <TextBlock Text="Add New Member"/>
+                        <TextBlock Text="Add New Product"/>
                     </StackPanel>
                 </Button>
 
@@ -174,11 +174,65 @@
 
                 <!--Tab Buttons-->
                 <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 10 0 0">
-                    <Button Content="Club Staff" Style="{StaticResource tabButton}" BorderBrush="gray"/>
-                    <Button Content="Players" Style="{StaticResource tabButton}"/>
-                    <Button Content="Archived" Style="{StaticResource tabButton}"/>
+                    <Button Content="Product Categories" Style="{StaticResource tabButton}" Width="150"/>
+                    <Button Content="Best Selling" Style="{StaticResource tabButton}" Width="130"/>
+                    <Button Content="Latest Product" Style="{StaticResource tabButton}" Width="130"/>
+                    <Button Content="Latest Product" Style="{StaticResource tabButton}" Width="130"/>
+                    <Button Content="Latest Product" Style="{StaticResource tabButton}" Width="130"/>
                 </StackPanel>
 
+                <!--Counter Title-->
+                <TextBlock Text="68 Club Staff" Grid.Row="4" FontSize="18" FontWeight="SemiBold"
+                           Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                <TextBlock Text="Filter by" Grid.Row="4" FontSize="18" FontWeight="SemiBold" Margin="0 0 215 0"
+            Foreground="Black" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+
+
+                <!--Filter Textbox-->
+                <Grid Width="200" HorizontalAlignment="Right" Grid.Row="4">
+                    <TextBlock Margin="15 0" VerticalAlignment="Center" Foreground="#b0b9c6" IsHitTestVisible="False"
+               Panel.ZIndex="1" Text="Seacrh in Member ..."
+               Visibility="{Binding ElementName=txtSearch, Path=Text.IsEmpty,Converter={StaticResource BoolToVis}}"/>
+
+                    <TextBox x:Name="txtFilter" Style="{StaticResource textboxSearch}"/>
+                </Grid>
+
+                <!--Member Datagrid-->
+                <!--DataGrid ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource}">
+
+                </DataGrid-->
+
+                <!--Pagination Sedtion-->
+                <Border Grid.Row="6" HorizontalAlignment="Right" BorderBrush="White" BorderThickness="1"
+                            CornerRadius="5" Padding="5" Background="White" Margin="0 10 10 10">
+                    <StackPanel Orientation="Horizontal">
+
+                        <Button Style="{StaticResource pagingButton}">
+                            <Icon:PackIconMaterial Kind="ChevronLeft" Style="{StaticResource pagingButtonIcon}"/>
+                        </Button>
+
+                        <Rectangle Width="1" Fill="White" Margin="3 7"/>
+
+                        <Button Style="{StaticResource pagingButton}" Content="1"/>
+                        <Button Style="{StaticResource pagingButton}" Content="2" Background="Gray" Foreground="White"/>
+                        <Button Style="{StaticResource pagingButton}" Content="3"/>
+
+                        <TextBlock Text="..." Foreground="Gray" VerticalAlignment="Center" FontSize="15" Margin="10 0"/>
+
+                        <Button Style="{StaticResource pagingButton}" Content="7"/>
+                        <Button Style="{StaticResource pagingButton}" Content="8"/>
+                        <Button Style="{StaticResource pagingButton}" Content="9"/>
+
+                        <Rectangle Width="1" Fill="White" Margin="3 7"/>
+
+                        <Button Style="{StaticResource pagingButton}">
+                            <Icon:PackIconMaterial Kind="ChevronRight" Style="{StaticResource pagingButtonIcon}"/>
+                        </Button>
+
+                    </StackPanel>
+                </Border>
+                <ContentControl x:Name="MainContent" Content="MainContent" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Height="377" Width="750"/>
             </Grid>
 
         </Grid>
