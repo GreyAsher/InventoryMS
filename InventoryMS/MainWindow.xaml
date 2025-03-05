@@ -40,7 +40,7 @@
             </Button>
 
 
-            <Border Background="Gray" CornerRadius="0 50 0 20" Margin="0,113,0,0">
+            <Border Background="Gray" CornerRadius="0 50 0 20" Margin="0,69,0,0">
                 <DockPanel>
 
                     <Border Width="80" Height="80" Padding="3" Background="White" CornerRadius="100"
@@ -58,8 +58,10 @@
                                 DockPanel.Dock="Top" TextAlignment="Center"/>
 
                     <!--Menu Separator-->
-                    <Separator Margin="25" DockPanel.Dock="Top" Height="0.8" Background="DarkGray"/>
+                    <Separator Margin="15" DockPanel.Dock="Top" Height="0.8" Background="DarkGray"/>
 
+                    <ScrollViewer VerticalScrollBarVisibility="Hidden" DockPanel.Dock="Left" Height="453">
+                    
                     <!--Menu BUtton-->
                     <StackPanel DockPanel.Dock="Top">
                         <Button Style="{StaticResource menuButton}" Click="DashboardButton_Click">
@@ -69,127 +71,151 @@
                             </StackPanel>
                         </Button>
 
-                        <!-- Product Management (Expandable) -->
-                        <Expander Header="Product Management" Foreground="White" Margin="10 10 0 5" FontSize="10">
-                            <StackPanel>
-                                <Button Style="{StaticResource menuButton}" Click="ProductButton_Click">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Icon:PackIconMaterial Kind="Cube" Style="{StaticResource menuBUttonIcon}"/>
-                                        <TextBlock Text="Products"/>
-                                    </StackPanel>
-                                </Button>
-                                <Button Style="{StaticResource menuButton}" >
-                                    <StackPanel Orientation="Horizontal">
-                                        <Icon:PackIconMaterial Kind="Shape" Style="{StaticResource menuBUttonIcon}"/>
-                                        <TextBlock Text="Categories"/>
-                                    </StackPanel>
-                                </Button>
-                                <Button Style="{StaticResource menuButton}" >
-                                    <StackPanel Orientation="Horizontal">
-                                        <Icon:PackIconMaterial Kind="Warehouse" Style="{StaticResource menuBUttonIcon}"/>
-                                        <TextBlock Text="Stock Management"/>
-                                    </StackPanel>
-                                </Button>
-                            </StackPanel>
-                        </Expander>
+                        <!-- Product Management Title -->
+                        <TextBlock Text="Product Management" FontSize="10" FontWeight="SemiBold" Foreground="White" 
+                                    Margin="10 10 0 5"/>
 
-                        <!-- Supplier & Purchase Management (Expandable) -->
-                        <Expander Header="Supplier and Purchase" Foreground="White" Margin="10 10 0 5" FontSize="10">
-                            <StackPanel>
-                                <Button Style="{StaticResource menuButton}" Click="SupplierButton_Click">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Icon:PackIconMaterial Kind="TruckDelivery" Style="{StaticResource menuBUttonIcon}"/>
-                                        <TextBlock Text="Suppliers"/>
-                                    </StackPanel>
-                                </Button>
-                                <Button Style="{StaticResource menuButton}">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Icon:PackIconMaterial Kind="ClipboardList" Style="{StaticResource menuBUttonIcon}"/>
-                                        <TextBlock Text="Purchase Orders"/>
-                                    </StackPanel>
-                                </Button>
-                            </StackPanel>
-                        </Expander>
+                        <!-- Product, Categories, Stock Management Buttons -->
+                        <StackPanel>
+                            <Button Style="{StaticResource menuButton}" Click="ProductButton_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="Cube" Style="{StaticResource menuBUttonIcon}"/>
+                                    <TextBlock Text="Products" Margin="5,0,5,0"/>
+                                </StackPanel>
+                            </Button>
 
-                        <!-- Sales & Customer Management (Expandable) -->
-                        <Expander Header="Sales and Customers" Foreground="White" Margin="10 10 0 5" FontSize="10">
-                            <StackPanel>
-                                <Button Style="{StaticResource menuButton}" Click="SalesButton_Click">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Icon:PackIconMaterial Kind="Cart" Style="{StaticResource menuBUttonIcon}"/>
-                                        <TextBlock Text="Sales"/>
-                                    </StackPanel>
-                                </Button>
-                                <Button Style="{StaticResource menuButton}">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Icon:PackIconMaterial Kind="AccountGroup" Style="{StaticResource menuBUttonIcon}"/>
-                                        <TextBlock Text="Customers"/>
-                                    </StackPanel>
-                                </Button>
-                                <Button Style="{StaticResource menuButton}">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Icon:PackIconMaterial Kind="Receipt" Style="{StaticResource menuBUttonIcon}"/>
-                                        <TextBlock Text="Invoices and Receipts"/>
-                                    </StackPanel>
-                                </Button>
-                            </StackPanel>
-                        </Expander>
+                            <Button Style="{StaticResource menuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="Shape" Style="{StaticResource menuBUttonIcon}"/>
+                                    <TextBlock Text="Categories" Margin="5,0,5,0"/>
+                                </StackPanel>
+                            </Button>
 
-                        <!-- Reports & Analytics (Expandable) -->
-                        <Expander Header="Reports and Analytics" Foreground="White" Margin="10 10 0 5" FontSize="10">
-                            <StackPanel>
-                                <Button Style="{StaticResource menuButton}">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Icon:PackIconMaterial Kind="ChartBar" Style="{StaticResource menuBUttonIcon}"/>
-                                        <TextBlock Text="Stock Reports"/>
-                                    </StackPanel>
-                                </Button>
-                                <Button Style="{StaticResource menuButton}">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Icon:PackIconMaterial Kind="Finance" Style="{StaticResource menuBUttonIcon}"/>
-                                        <TextBlock Text="Sales Reports"/>
-                                    </StackPanel>
-                                </Button>
-                                <Button Style="{StaticResource menuButton}">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Icon:PackIconMaterial Kind="ClipboardCheck" Style="{StaticResource menuBUttonIcon}"/>
-                                        <TextBlock Text="Purchase Reports"/>
-                                    </StackPanel>
-                                </Button>
-                            </StackPanel>
-                        </Expander>
+                            <Button Style="{StaticResource menuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="Warehouse" Style="{StaticResource menuBUttonIcon}"/>
+                                    <TextBlock Text="Stock Management" Margin="5,0,5,0"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
 
-                        <!-- User Management (Expandable) -->
-                        <Expander Header="User Management" Foreground="White" Margin="10 10 0 5" FontSize="10">
-                            <StackPanel>
-                                <Button Style="{StaticResource menuButton}" Click="OpenUserManagement">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Icon:PackIconMaterial Kind="Account" Style="{StaticResource menuBUttonIcon}"/>
-                                        <TextBlock Text="Users and Roles"/>
-                                    </StackPanel>
-                                </Button>
-                            </StackPanel>
-                        </Expander>
 
-                        <!-- Settings & Logout -->
-                        <Expander Header="Settings and Logout" Foreground="White" Margin="10 10 0 5" FontSize="10">
-                            <StackPanel>
-                                <Button Style="{StaticResource menuButton}">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Icon:PackIconMaterial Kind="Cog" Style="{StaticResource menuBUttonIcon}"/>
-                                        <TextBlock Text="Settings"/>
-                                    </StackPanel>
-                                </Button>
-                                <Button Style="{StaticResource menuButton}">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Icon:PackIconMaterial Kind="Logout" Style="{StaticResource menuBUttonIcon}"/>
-                                        <TextBlock Text="Logout"/>
-                                    </StackPanel>
-                                </Button>
-                            </StackPanel>
-                        </Expander>
 
+                        <!-- Supplier & Purchase Management Title -->
+                        <TextBlock Text="Supplier and Purchase Management" FontSize="10" FontWeight="SemiBold" Foreground="White" 
+                                    Margin="10 10 0 5"/>
+
+                        <!-- Supplier & Purchase Order Buttons -->
+                        <StackPanel>
+                            <Button Style="{StaticResource menuButton}" Click="SupplierButton_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="TruckDelivery" Style="{StaticResource menuBUttonIcon}"/>
+                                    <TextBlock Text="Suppliers" Margin="5,0,5,0"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button Style="{StaticResource menuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="ClipboardList" Style="{StaticResource menuBUttonIcon}"/>
+                                    <TextBlock Text="Purchase Orders" Margin="5,0,5,0"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+
+
+                        <!-- Sales & Customers Title -->
+                        <TextBlock Text="Sales and Customers" FontSize="10" FontWeight="SemiBold" Foreground="White" 
+                                    Margin="10 10 0 5"/>
+
+                        <!-- Sales, Customers & Invoices Buttons -->
+                        <StackPanel>
+                            <Button Style="{StaticResource menuButton}" Click="SalesButton_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="Cart" Style="{StaticResource menuBUttonIcon}"/>
+                                    <TextBlock Text="Sales" Margin="5,0,5,0"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button Style="{StaticResource menuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="AccountGroup" Style="{StaticResource menuBUttonIcon}"/>
+                                    <TextBlock Text="Customers" Margin="5,0,5,0"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button Style="{StaticResource menuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="Receipt" Style="{StaticResource menuBUttonIcon}"/>
+                                    <TextBlock Text="Invoices and Receipts" Margin="5,0,5,0"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+
+
+                        <!-- Reports & Analytics Title -->
+                        <TextBlock Text="Reports and Analytics" FontSize="10" FontWeight="SemiBold" Foreground="White" 
+           Margin="10 10 0 5"/>
+
+                        <!-- Reports & Analytics Buttons -->
+                        <StackPanel>
+                            <Button Style="{StaticResource menuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="ChartBar" Style="{StaticResource menuBUttonIcon}"/>
+                                    <TextBlock Text="Stock Reports" Margin="5,0,5,0"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button Style="{StaticResource menuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="Finance" Style="{StaticResource menuBUttonIcon}"/>
+                                    <TextBlock Text="Sales Reports" Margin="5,0,5,0"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button Style="{StaticResource menuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="ClipboardCheck" Style="{StaticResource menuBUttonIcon}"/>
+                                    <TextBlock Text="Purchase Reports" Margin="5,0,5,0"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+
+                        <!-- User Management Title -->
+                        <TextBlock Text="User Management" FontSize="10" FontWeight="SemiBold" Foreground="White" 
+                                    Margin="10 10 0 5"/>
+
+                        <!-- User Management Button -->
+                        <StackPanel>
+                            <Button Style="{StaticResource menuButton}" Click="OpenUserManagement">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="Account" Style="{StaticResource menuBUttonIcon}"/>
+                                    <TextBlock Text="Users and Roles" Margin="5,0,5,0"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+
+                        <!-- Settings & Logout Title -->
+                        <TextBlock Text="Settings and Logout" FontSize="10" FontWeight="SemiBold" Foreground="White" 
+                                    Margin="10 10 0 5"/>
+
+                        <!-- Settings & Logout Buttons -->
+                        <StackPanel>
+                            <Button Style="{StaticResource menuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="Cog" Style="{StaticResource menuBUttonIcon}"/>
+                                    <TextBlock Text="Settings" Margin="5,0,5,0"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button Style="{StaticResource menuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="Logout" Style="{StaticResource menuBUttonIcon}"/>
+                                    <TextBlock Text="Logout" Margin="5,0,5,0"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
                     </StackPanel>
+                    </ScrollViewer>
                 </DockPanel>
             </Border>
 
