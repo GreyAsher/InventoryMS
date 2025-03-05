@@ -71,11 +71,17 @@
     <Compile Include="View\DashboardUserControl.xaml.cs">
       <DependentUpon>DashboardUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ProductManagement.xaml.cs">
-      <DependentUpon>ProductManagement.xaml</DependentUpon>
+    <Compile Include="View\ProductManagement\OrderPurchaseUserControl.xaml.cs">
+      <DependentUpon>OrderPurchaseUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ProductUserControl.xaml.cs">
+    <Compile Include="View\ProductManagement\ProductCategoryUserControl.xaml.cs">
+      <DependentUpon>ProductCategoryUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProductManagement\ProductUserControl.xaml.cs">
       <DependentUpon>ProductUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProductManagement\StockManageUserControl.xaml.cs">
+      <DependentUpon>StockManageUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SalesUserControl.xaml.cs">
       <DependentUpon>SalesUserControl.xaml</DependentUpon>
@@ -102,11 +108,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ProductManagement.xaml">
+    <Page Include="View\ProductManagement\OrderPurchaseUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ProductUserControl.xaml">
+    <Page Include="View\ProductManagement\ProductCategoryUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProductManagement\ProductUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProductManagement\StockManageUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Input;
 using InventoryMS.View;
+using InventoryMS.View.ProductManagement;
 
 
 namespace InventoryMS
@@ -76,5 +77,19 @@ namespace InventoryMS
             MainContent.Content = new SalesUserControl();
         }
 
+        private void CategoryButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new ProductCategoryUserControl();
+        }
+
+        private void StockManagement_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new StockManageUserControl();
+        }
+
+        private void OrderPurchase_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new OrderPurchaseUserControl();
+        }
     }
 }

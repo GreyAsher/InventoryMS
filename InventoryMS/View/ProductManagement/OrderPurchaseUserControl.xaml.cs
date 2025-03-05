@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace InventoryMS.View
+namespace InventoryMS.View.ProductManagement
 {
     /// <summary>
-    /// Interaction logic for ProductManagement.xaml
+    /// Interaction logic for OrderPurchaseUserControl.xaml
     /// </summary>
-    public partial class ProductManagement : UserControl
+    public partial class OrderPurchaseUserControl : UserControl
     {
-        public ProductManagement()
+        public OrderPurchaseUserControl()
         {
             InitializeComponent();
         }
