@@ -167,5 +167,14 @@
   <ItemGroup>
     <Resource Include="Images\OIP__9_-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\vase.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\teaset.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\plate.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -203,5 +203,28 @@
 
         </Style>
 
+
+        <!-- Edit Button Style -->
+        <Style x:Key="editButton" TargetType="Button">
+            <Setter Property="Background" Value="#4CAF50"/>
+            <!-- Green color -->
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="5,2"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Content" Value="Edit"/>
+        </Style>
+
+        <!-- Delete Button Style -->
+        <Style x:Key="deleteButton" TargetType="Button">
+            <Setter Property="Background" Value="#F44336"/>
+            <!-- Red color -->
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="5,2"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Content" Value="Delete"/>
+        </Style>
+
     </Application.Resources>
 </Application>

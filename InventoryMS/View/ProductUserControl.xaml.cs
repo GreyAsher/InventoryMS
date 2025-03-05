@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using InventoryMS.Model;
+using InventoryMS.View;
+
 
 namespace InventoryMS.View
 {
@@ -30,14 +32,14 @@ namespace InventoryMS.View
             InitializeComponent();
 
             // Sample data
-            Products = new ObservableCollection<Product>
-            {
-                new Product { Name = "Laptop", Category = "Electronics", Price = 1000, Stock = 50 },
-                new Product { Name = "Smartphone", Category = "Mobile", Price = 700, Stock = 120 },
-                new Product { Name = "Headphones", Category = "Accessories", Price = 150, Stock = 200 }
-            };
+            List<Product> products = new List<Product>
+{
+            new Product { ProductID = 1, Name = "Porcelain Vase", Category = "Decor", Price = 49.99m, Stock = 10, ImagePath="Images/vase.jpg" },
+            new Product { ProductID = 2, Name = "Tea Set", Category = "Kitchen", Price = 29.99m, Stock = 3, ImagePath="Images/teaset.jpg" },
+            new Product { ProductID = 3, Name = "Porcelain Plate", Category = "Tableware", Price = 15.99m, Stock = 0, ImagePath="Images/plate.jpg" }
+};
+            ProductDataGrid.ItemsSource = products;
 
-            ProductGrid.ItemsSource = Products;
         }
 
         private void AddProduct_Click(object sender, RoutedEventArgs e)
@@ -47,7 +49,7 @@ namespace InventoryMS.View
 
         private void EditProduct_Click(object sender, RoutedEventArgs e)
         {
-            if (ProductGrid.SelectedItem is Product selectedProduct)
+            if (ProductDataGrid.SelectedItem is Product selectedProduct)
             {
                 MessageBox.Show($"Editing: {selectedProduct.Name}");
             }
@@ -55,7 +57,7 @@ namespace InventoryMS.View
 
         private void DeleteProduct_Click(object sender, RoutedEventArgs e)
         {
-            if (ProductGrid.SelectedItem is Product selectedProduct)
+            if (ProductDataGrid.SelectedItem is Product selectedProduct)
             {
                 Products.Remove(selectedProduct);
             }
@@ -65,10 +67,12 @@ namespace InventoryMS.View
 
     public class Product
     {
+        public int ProductID { get; set; }
         public string Name { get; set; }
         public string Category { get; set; }
-        public double Price { get; set; }
+        public decimal Price { get; set; }
         public int Stock { get; set; }
+        public string ImagePath { get; set; } // Path to product image
     }
 
 }

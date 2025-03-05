@@ -61,7 +61,7 @@ namespace InventoryMS
             MainContent.Content = new UserManageUserControl(); // Load the UserControl
         }
 
-        private void OpenProductPage(object sender, RoutedEventArgs e)
+        private void ProductButton_Click(object sender, RoutedEventArgs e)
         {
             MainContent.Content = new ProductUserControl();
         }
