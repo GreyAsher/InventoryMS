@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using InventoryMS.View;
 using InventoryMS.View.ProductManagement;
+using InventoryMS.View.SalesAndCostumers;
 
 
 namespace InventoryMS
@@ -90,6 +91,10 @@ namespace InventoryMS
         private void OrderPurchase_Click(object sender, RoutedEventArgs e)
         {
             MainContent.Content = new OrderPurchaseUserControl();
+        }
+        private void CostumerButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new CostumerUserControl();
         }
     }
 }
