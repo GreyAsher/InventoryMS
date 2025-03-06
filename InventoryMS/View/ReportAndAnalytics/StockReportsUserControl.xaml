@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="InventoryMS.View.ReportAndAnalytics.StockReportsUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:local="clr-namespace:InventoryMS.View.ReportAndAnalytics"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+    </UserControl.Resources>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Header -->
+            <RowDefinition Height="Auto"/>
+            <!-- Search Bar -->
+            <RowDefinition Height="*"/>
+            <!-- Report List -->
+            <RowDefinition Height="Auto"/>
+            <!-- Buttons -->
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock Text="Stock Reports" FontSize="24" FontWeight="SemiBold"
+                   Foreground="Black" HorizontalAlignment="Left" Margin="0 0 0 10"/>
+
+        <!-- Search Bar -->
+        <Grid Width="250" HorizontalAlignment="Left" Grid.Row="1" Margin="0 0 0 10">
+            <TextBlock Margin="15 0" VerticalAlignment="Center" Foreground="Gray"
+                       IsHitTestVisible="False" Text="Search Report..."
+                       Visibility="{Binding ElementName=txtSearchReport, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}"/>
+
+            <TextBox x:Name="txtSearchReport" Style="{StaticResource textboxSearch}"/>
+        </Grid>
+
+        <!-- Report List -->
+        <ListBox x:Name="lbStockReports" Grid.Row="2" Background="White"
+                 Foreground="Black" BorderThickness="1" BorderBrush="Gray"
+                 Margin="0,10,0,10">
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Icon:PackIconMaterial Kind="ClipboardTextClock" Width="20" Height="20" Margin="0,0,5,0"/>
+                    <TextBlock Text="Report #1001 - Low Stock"/>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Icon:PackIconMaterial Kind="ClipboardCheck" Width="20" Height="20" Margin="0,0,5,0"/>
+                    <TextBlock Text="Report #1002 - Overstocked"/>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Icon:PackIconMaterial Kind="ClipboardList" Width="20" Height="20" Margin="0,0,5,0"/>
+                    <TextBlock Text="Report #1003 - Recent Transactions"/>
+                </StackPanel>
+            </ListBoxItem>
+        </ListBox>
+
+        <!-- Action Buttons -->
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button Style="{StaticResource addButton}" Margin="0 0 10 0">
+                <StackPanel Orientation="Horizontal">
+                    <Icon:PackIconMaterial Kind="Eye" VerticalAlignment="Center" Width="16" Height="16" Margin="0 1 8 0"/>
+                    <TextBlock Text="View Report"/>
+                </StackPanel>
+            </Button>
+
+            <Button Style="{StaticResource addButton}" Margin="0 0 10 0">
+                <StackPanel Orientation="Horizontal">
+                    <Icon:PackIconMaterial Kind="Download" VerticalAlignment="Center" Width="16" Height="16" Margin="0 1 8 0"/>
+                    <TextBlock Text="Export Report"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

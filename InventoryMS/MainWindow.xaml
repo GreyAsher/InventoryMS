@@ -144,7 +144,7 @@
                                 </StackPanel>
                             </Button>
 
-                            <Button Style="{StaticResource menuButton}">
+                            <Button Style="{StaticResource menuButton}" Click="InvoiceReceipt_Click">
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="Receipt" Style="{StaticResource menuBUttonIcon}"/>
                                     <TextBlock Text="Invoices and Receipts" Margin="5,0,5,0"/>
@@ -159,21 +159,21 @@
 
                         <!-- Reports & Analytics Buttons -->
                         <StackPanel>
-                            <Button Style="{StaticResource menuButton}">
+                            <Button Style="{StaticResource menuButton}" Click="StockReport_Click">
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="ChartBar" Style="{StaticResource menuBUttonIcon}"/>
                                     <TextBlock Text="Stock Reports" Margin="5,0,5,0"/>
                                 </StackPanel>
                             </Button>
 
-                            <Button Style="{StaticResource menuButton}">
+                            <Button Style="{StaticResource menuButton}" Click="SalesReport_Click">
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="Finance" Style="{StaticResource menuBUttonIcon}"/>
                                     <TextBlock Text="Sales Reports" Margin="5,0,5,0"/>
                                 </StackPanel>
                             </Button>
 
-                            <Button Style="{StaticResource menuButton}">
+                            <Button Style="{StaticResource menuButton}" Click="PurchaseReport_Click">
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="ClipboardCheck" Style="{StaticResource menuBUttonIcon}"/>
                                     <TextBlock Text="Purchase Reports" Margin="5,0,5,0"/>
@@ -201,7 +201,7 @@
 
                         <!-- Settings & Logout Buttons -->
                         <StackPanel>
-                            <Button Style="{StaticResource menuButton}">
+                            <Button Style="{StaticResource menuButton}" Click="SettingsButton_Click">
                                 <StackPanel Orientation="Horizontal">
                                     <Icon:PackIconMaterial Kind="Cog" Style="{StaticResource menuBUttonIcon}"/>
                                     <TextBlock Text="Settings" Margin="5,0,5,0"/>

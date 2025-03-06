@@ -3,6 +3,8 @@ using System.Windows.Input;
 using InventoryMS.View;
 using InventoryMS.View.ProductManagement;
 using InventoryMS.View.SalesAndCostumers;
+using InventoryMS.View.SupplierAndPurchaseOrders;
+using InventoryMS.View.ReportAndAnalytics;
 
 
 namespace InventoryMS
@@ -95,6 +97,26 @@ namespace InventoryMS
         private void CostumerButton_Click(object sender, RoutedEventArgs e)
         {
             MainContent.Content = new CostumerUserControl();
+        }
+        private void InvoiceReceipt_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new InvoiceReceiptsUserControl();
+        }
+        private void StockReport_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new StockReportsUserControl();
+        }
+        private void SalesReport_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new SalesReportUserControl();
+        }
+        private void PurchaseReport_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new PurchaseReportUserControl();
+        }
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new SettingsUserControl();
         }
     }
 }

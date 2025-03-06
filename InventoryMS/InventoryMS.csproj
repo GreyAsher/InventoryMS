@@ -71,8 +71,23 @@
     <Compile Include="View\DashboardUserControl.xaml.cs">
       <DependentUpon>DashboardUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ReportAndAnalytics\PurchaseReportUserControl.xaml.cs">
+      <DependentUpon>PurchaseReportUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReportAndAnalytics\SalesReportUserControl.xaml.cs">
+      <DependentUpon>SalesReportUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReportAndAnalytics\StockReportsUserControl.xaml.cs">
+      <DependentUpon>StockReportsUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SalesAndCostumers\CostumerUserControl.xaml.cs">
       <DependentUpon>CostumerUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SettingsUserControl.xaml.cs">
+      <DependentUpon>SettingsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SupplierAndPurchaseOrders\InvoiceReceiptsUserControl.xaml.cs">
+      <DependentUpon>InvoiceReceiptsUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SupplierAndPurchaseOrders\OrderPurchaseUserControl.xaml.cs">
       <DependentUpon>OrderPurchaseUserControl.xaml</DependentUpon>
@@ -111,7 +126,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ReportAndAnalytics\PurchaseReportUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ReportAndAnalytics\SalesReportUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ReportAndAnalytics\StockReportsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\SalesAndCostumers\CostumerUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SettingsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SupplierAndPurchaseOrders\InvoiceReceiptsUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
