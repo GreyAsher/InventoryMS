@@ -93,6 +93,7 @@
     <Compile Include="Model\StockManagement.cs" />
     <Compile Include="Model\StockReport.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
     <Compile Include="View\DashboardUserControl.xaml.cs">
       <DependentUpon>DashboardUserControl.xaml</DependentUpon>
     </Compile>
