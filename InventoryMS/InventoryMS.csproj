@@ -76,6 +76,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\DBContext.cs" />
+    <Compile Include="Model\BestSellingProduct.cs" />
+    <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\DailySalesSummary.cs" />
+    <Compile Include="Model\DashboardGraphData.cs" />
+    <Compile Include="Model\DashboardSummary.cs" />
+    <Compile Include="Model\Invoice.cs" />
+    <Compile Include="Model\LowStockAlert.cs" />
+    <Compile Include="Model\MonthlyTrends.cs" />
+    <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\OrderDetail.cs" />
+    <Compile Include="Model\PurchaseReport.cs" />
+    <Compile Include="Model\SalesReport.cs" />
+    <Compile Include="Model\StockManagement.cs" />
+    <Compile Include="Model\StockReport.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="View\DashboardUserControl.xaml.cs">
       <DependentUpon>DashboardUserControl.xaml</DependentUpon>
     </Compile>
@@ -216,9 +233,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MVVM\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\IMG_20240507_090711.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
