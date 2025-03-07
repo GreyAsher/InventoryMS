@@ -10,9 +10,9 @@ using InventoryMS.Model;
 
 namespace InventoryMS.Data
 {
-    public class DBContext : DbContext
+    public class InventoryDBContext : DbContext
     {
-        public DBContext() : base("name=InventoryDB") { }
+        public InventoryDBContext() : base("name=InventorySMDB") { }
 
         public DbSet<User> Users { get; set; }
         public DbSet<Product> Products { get; set; }

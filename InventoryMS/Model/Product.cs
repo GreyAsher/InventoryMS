@@ -6,6 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using InventoryMS.Model;
+using System.IO;
+using System.Windows.Media.Imaging;
+using System.Data.SqlClient;
 
 namespace InventoryMS.Model
 {
@@ -40,6 +43,29 @@ namespace InventoryMS.Model
         public string Description { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
+
+        public byte[] ProductImage { get; set; } // Image stored as binary data
+
+        // Convert byte array to ImageSource for XAML binding
+        [NotMapped]
+        public BitmapImage ImageSource
+        {
+            get
+            {
+                if (ProductImage == null || ProductImage.Length == 0)
+                    return null;
+
+                using (var ms = new MemoryStream(ProductImage))
+                {
+                    BitmapImage image = new BitmapImage();
+                    image.BeginInit();
+                    image.CacheOption = BitmapCacheOption.OnLoad;
+                    image.StreamSource = ms;
+                    image.EndInit();
+                    return image;
+                }
+            }
+        }
 
         // Navigation properties
         public virtual Category Category { get; set; }
