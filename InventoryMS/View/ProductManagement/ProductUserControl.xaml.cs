@@ -17,6 +17,7 @@ using System.Data.SqlClient;
 using InventoryMS.Model;
 using InventoryMS.Repositories;
 using InventoryMS.View;
+using InventoryMS.Data;
 
 
 namespace InventoryMS.View
@@ -35,6 +36,8 @@ namespace InventoryMS.View
         public ProductUserControl()
         {
             InitializeComponent();
+            //InventoryDBContext context = new InventoryDBContext();
+            //ProductDataGrid.ItemsSource = context.Products.ToList();
             _productRepository = new ProductRepository();
             LoadProducts();
 
